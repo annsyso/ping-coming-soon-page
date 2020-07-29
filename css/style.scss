@@ -1,16 +1,120 @@
 @import 'config';
 
 body {
+    font-family: $font-family;
     height: 100vh;
     width: 100vw;
-    font-family: $font-family;
-    
 }
 
 .container {
     @include flexCenter(column);
     margin: 2rem;
     position: relative;
+
+    .social {
+        margin: 1rem;
+        @include flexCenter(row);
+        
+        i {
+            @include flexCenter(column);
+            border: 1px solid rgba($primary-color, .5);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            padding: 15px;
+            margin: 0 .3rem;
+            font-size: .6rem;
+            color: $primary-color;
+
+            &:hover {
+                background-color: $primary-color;
+                color: #fff;
+            }
+        }
+    }
+
+    .header {
+        text-align: center;
+
+        h1 {
+            font-weight: weight(light);
+            color: $neutral-1;
+
+            span {
+                font-weight: weight(bold);
+                color: $neutral-2;
+            }
+        }
+
+        p {
+            font-size: .6rem;
+            margin: 1rem;
+        }
+    }
+
+    .signup {
+
+        input {
+            font-family: $font-family;
+            color: rgba($primary-color, .5);
+            width: 100%;
+            padding: .5rem;
+            border-radius: 50px;
+            border: 1px solid rgba($primary-color, .5);
+        }
+
+        button {
+            padding: .5rem;
+            border-radius: 50px;
+            border: 1px solid $primary-color;
+            background-color: $primary-color;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba($primary-color, .5);
+
+        }
+    }
+
+    footer {
+        @include flexCenter(column);
+        text-align: center;
+
+        p {
+            font-size: .5rem;
+            text-align: center;
+            color: $neutral-1;
+        }
+    }
+
+    @include desktop {
+
+        img {
+            max-width: 25rem;
+            margin: 2rem 1rem;
+        }
+
+        .header {
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .signup {
+            @include flexCenter(row);
+            margin-top: 1rem;
+            width: 60vw;
+
+            input {
+                margin: 0 .5rem;
+            }
+
+            button {
+                width: 40%;
+            }
+        }
+
+
+    }
 
     @include mobile {
 
@@ -24,81 +128,22 @@ body {
         }
 
         .header {
-            text-align: center;
 
             h1 {
                 font-size: 1.2rem;
-                font-weight: weight(light);
-                color: $neutral-1;
-
-                span {
-                    font-weight: weight(bold);
-                    color: $neutral-2;
-                }
-            }
-
-            p {
-                font-size: .6rem;
-                margin: 1rem;
             }
         }
 
         .signup {
             @include flexCenter(column);
-            width: 70vw;
             margin-top: .5rem;
-
-            input {
-                font-family: $font-family;
-                color: rgba($primary-color, .5);
-                width: 100%;
-                padding: .5rem;
-                border-radius: 50px;
-                border: 1px solid rgba($primary-color, .5);
-            }
+            width: 70vw;
 
             button {
                 width: 100%;
-                padding: .5rem;
-                border-radius: 50px;
                 margin-top: .5rem;
-                border: 1px solid $primary-color;
-                background-color: $primary-color;
-                color: #fff;
-
             }
         }
-
-        footer {
-            @include flexCenter(column);
-            text-align: center;
-
-            .social {
-                margin-top: 2rem;
-                @include flexCenter(row);
-                
-
-                .fa {
-                    @include flexCenter(column);
-                    border: 1px solid rgba($primary-color, .5);
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    padding: 20px;
-                    margin: 0 .3rem;
-                    font-size: .6rem;
-                    color: $primary-color;
-                }
-            }
-
-            p {
-                font-size: .5rem;
-                margin: 1rem;
-                text-align: center;
-                color: $neutral-1;
-            }
-        }
-        
 
     }
 

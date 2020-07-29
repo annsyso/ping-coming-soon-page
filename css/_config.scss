@@ -42,7 +42,7 @@ $neutral-2: hsl(209, 33%, 12%);
 }
 
 @mixin desktop {
-    @media (min-width: 376) {
+    @media (min-width: 376px) {
         @content;
     }
 }
